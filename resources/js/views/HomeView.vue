@@ -1,17 +1,19 @@
 <template>
+    <Nav class="w-full"/>
     <Hero class="w-full"/>
-    <Blog class="w-full"/>
+    <BlogLatest class="w-full"/>
     <Footer class="w-full"/>
 </template>
 
 <script>
+import Nav from '../components/Nav.vue';
 import Hero from '../components/Hero.vue';
-import Blog from '../components/Blog.vue';
+import BlogLatest from '../components/BlogLatest.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
     components: {
-        Hero, Blog, Footer
+        Hero, BlogLatest, Footer, Nav
     }
 }
 </script>

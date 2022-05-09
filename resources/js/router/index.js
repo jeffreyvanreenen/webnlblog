@@ -7,6 +7,21 @@ const routes = [
         name: 'home',
         component: HomeView
     },
+    {
+        path: '/blogpost/:id',
+        name: 'blogpost',
+        component: HomeView
+    },
+    {
+        path: '/alle-blogposts',
+        name: 'alle-blogposts',
+        component: HomeView
+    },
+    {
+        path: '/contact',
+        name: 'contact',
+        component: HomeView
+    },
 
 ]
 

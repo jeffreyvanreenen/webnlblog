@@ -4,6 +4,9 @@
     <title>Contact form WebNL Blog</title>
 </head>
 <body>
-<p>Hello! This is a test email.</p>
+<p>Bericht via het contactformulier:</p>
+<p>Naam: {{ $details['name'] }}</p>
+<p>Email: {{ $details['email'] }}</p>
+<p>Bericht: {{ $details['message'] }}</p>
 </body>
 </html>

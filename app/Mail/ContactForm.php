@@ -31,7 +31,7 @@ class ContactForm extends Mailable
     public function build()
     {
         return $this->from('noreply@webnlblog.nl', 'Web NL Blog Contact')
-            ->subject('Contactform')
+            ->subject('Bericht via contactformulier')
             ->view('mails.email');
     }
 }

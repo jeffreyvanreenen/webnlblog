@@ -87,7 +87,14 @@ class BlogsController extends Controller
     public
     function show(Blog $blog)
     {
-        //
+        if (!isset($_GET['id'])) {
+           return null;
+        }
+
+        return response()->json([
+            'blog' => Blog::where('id', htmlspecialchars($_GET['id']))->with('author')->with('categorie')->get()
+        ], Response::HTTP_OK);
+
     }
 
     public

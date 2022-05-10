@@ -24,7 +24,7 @@ class BlogFactory extends Factory
             'name' => $this->faker->realText($maxNbChars = 50, $indexSize = 2),
             'post' => $this->faker->realText($maxNbChars = 1000, $indexSize = 5),
             'image' => 'https://picsum.photos/200/300?random='.rand(1,100),
-            'author' => rand(1,50),
+            'author' => rand(1,10),
             'created_at' => $this->faker->dateTime($max = 'now', $timezone = null),
         ];
     }

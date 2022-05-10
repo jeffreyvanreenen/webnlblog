@@ -25,4 +25,4 @@ Route::get('fetchBlogPosts', [BlogsController::class, 'fetchBlogPosts']);
 Route::get('fetchCategories', [BlogsController::class, 'fetchCategories']);
 Route::get('fetchAuthors', [BlogsController::class, 'fetchAuthors']);
 Route::get('show', [BlogsController::class, 'show']);
-Route::get('contact', [ContactController::class, 'contact']);
+Route::post('contact', [ContactController::class, 'contact']);

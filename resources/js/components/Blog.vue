@@ -112,7 +112,7 @@ export default {
                     this.authFilters = encodeURI(JSON.stringify(this.authSelect));
                 }
 
-                const result = await this.axios.get('/api/fetchBlogPosts?page=' + this.page + '&catfilter=' + this.catFilters + '&authfilter=' + this.authFilters)
+                const result = await this.axios.get('http://webnlblog.digicate.nl/api/fetchBlogPosts?page=' + this.page + '&catfilter=' + this.catFilters + '&authfilter=' + this.authFilters)
                 console.log(result.data.blogs.data)
                 if (result.data.blogs.data.length) {
                 this.blogs.push(...result.data.blogs.data);
@@ -131,14 +131,14 @@ export default {
         },
 
         loadCategories() {
-            this.axios.get('/api/fetchCategories')
+            this.axios.get('http://webnlblog.digicate.nl/api/fetchCategories')
                 .then((response) => {
                     this.categories = response.data.categories;
                 })
         },
 
         loadAuthors() {
-            this.axios.get('/api/fetchAuthors')
+            this.axios.get('http://webnlblog.digicate.nl/api/fetchAuthors')
                 .then((response) => {
                     this.authors = response.data.authors;
                 })

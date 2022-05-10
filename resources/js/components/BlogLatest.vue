@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         getBlogs() {
-            this.axios.get('/api/index')
+            this.axios.get('http://webnlblog.digicate.nl/api/index')
                 .then((response) => {
                     this.blogs = response.data.blogs;
                 })

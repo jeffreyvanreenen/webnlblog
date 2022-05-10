@@ -19809,7 +19809,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 _context.next = 8;
-                return _this.axios.get('/api/fetchBlogPosts?page=' + _this.page + '&catfilter=' + _this.catFilters + '&authfilter=' + _this.authFilters);
+                return _this.axios.get('http://webnlblog.digicate.nl/api/fetchBlogPosts?page=' + _this.page + '&catfilter=' + _this.catFilters + '&authfilter=' + _this.authFilters);
 
               case 8:
                 result = _context.sent;
@@ -19849,14 +19849,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     loadCategories: function loadCategories() {
       var _this2 = this;
 
-      this.axios.get('/api/fetchCategories').then(function (response) {
+      this.axios.get('http://webnlblog.digicate.nl/api/fetchCategories').then(function (response) {
         _this2.categories = response.data.categories;
       });
     },
     loadAuthors: function loadAuthors() {
       var _this3 = this;
 
-      this.axios.get('/api/fetchAuthors').then(function (response) {
+      this.axios.get('http://webnlblog.digicate.nl/api/fetchAuthors').then(function (response) {
         _this3.authors = response.data.authors;
       });
     },
@@ -19916,7 +19916,7 @@ __webpack_require__.r(__webpack_exports__);
     getBlogs: function getBlogs() {
       var _this = this;
 
-      this.axios.get('/api/index').then(function (response) {
+      this.axios.get('http://webnlblog.digicate.nl/api/index').then(function (response) {
         _this.blogs = response.data.blogs;
       });
     }

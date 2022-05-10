@@ -60,7 +60,7 @@ class BlogsController extends Controller
     function fetchCategories()
     {
         return response()->json([
-            'categories' => Category::all()
+            'categories' => Category::has('blogs')->select('id', 'name')->get()
         ], Response::HTTP_OK);
     }
 

@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         getBlogs() {
-            this.axios.get('http://webnlblog.test/api/index')
+            this.axios.get('/api/index')
                 .then((response) => {
                     this.blogs = response.data.blogs;
                 })

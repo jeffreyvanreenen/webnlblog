@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('index', [BlogsController::class, 'index']);
+Route::get('fetchBlogPosts', [BlogsController::class, 'fetchBlogPosts']);
+Route::get('fetchCategories', [BlogsController::class, 'fetchCategories']);
+Route::get('fetchAuthors', [BlogsController::class, 'fetchAuthors']);

@@ -30,7 +30,7 @@
 
 <script>
 export default {
-    name: "BlogLatest",
+    name: "blogLatest",
     data() {
         return {
             blogs: {},

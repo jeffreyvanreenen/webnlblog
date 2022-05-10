@@ -22,7 +22,11 @@ class Blog extends Model
         'updated_at' => 'datetime:d-m-Y',
     ];
 
-    public function Author() {
+    public function author() {
         return $this->belongsTo(User::class,'author', 'id');
+    }
+
+    public function categorie() {
+        return $this->belongsToMany(Category::class, 'blog_categories');
     }
 }

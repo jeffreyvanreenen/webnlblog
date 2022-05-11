@@ -75,7 +75,7 @@ import InfiniteScroll from "infinite-loading-vue3";
 import _ from "lodash";
 
 export default {
-    name: "blogLatest",
+    name: "blog",
 
     components: {
         InfiniteScroll,

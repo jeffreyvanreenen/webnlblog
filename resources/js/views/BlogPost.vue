@@ -1,17 +1,17 @@
 <template>
     <Nav class="w-full"/>
-    <BlogPost class="w-full"/>
+    <FetchBlogPost class="w-full"/>
     <Footer class="w-full"/>
 </template>
 
 <script>
 import Nav from '../components/Nav.vue';
-import BlogPost from '../components/BlogPost.vue';
+import FetchBlogPost from '../components/FetchBlogPost.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
     components: {
-        BlogPost, Footer, Nav
+        FetchBlogPost, Footer, Nav
     }
 }
 </script>

@@ -68,7 +68,7 @@ import {mapActions} from "vuex";
 import axios from 'axios'
 
 export default {
-    name: "CentreAlignedSimple",
+    name: "Nav",
     created() {
 
     },

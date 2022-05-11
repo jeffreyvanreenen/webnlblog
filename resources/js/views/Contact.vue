@@ -68,12 +68,12 @@
 
 <script>
 import Nav from '../components/Nav.vue';
-import Blog from '../components/Blog.vue';
 import Footer from '../components/Footer.vue';
 
 export default {
+    name: "contact",
     components: {
-        Blog, Footer, Nav
+        Footer, Nav
     },
     data() {
         return {

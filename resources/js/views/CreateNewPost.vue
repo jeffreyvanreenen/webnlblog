@@ -53,8 +53,7 @@
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Tiptap from '../components/Tiptap';
-import _ from "lodash";
-import router from '../router'
+
 
 
 

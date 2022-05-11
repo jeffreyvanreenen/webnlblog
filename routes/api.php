@@ -1,5 +1,6 @@
 <?php
 
+//use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogsController;
@@ -23,6 +24,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('index', [BlogsController::class, 'index']);
 Route::get('fetchBlogPosts', [BlogsController::class, 'fetchBlogPosts']);
 Route::get('fetchCategories', [BlogsController::class, 'fetchCategories']);
+Route::post('newBlogPost', [BlogsController::class, 'store']);
+Route::get('fetchAllCategories', [BlogsController::class, 'fetchAllCategories']);
 Route::get('fetchAuthors', [BlogsController::class, 'fetchAuthors']);
 Route::get('show', [BlogsController::class, 'show']);
 Route::post('contact', [ContactController::class, 'contact']);
+
+
+
+
+Route::get('test', function() {
+    echo auth()->user();
+});
+
+//Route::post('login', [AuthController::class, 'login']);
+//Route::post('register', [AuthController::class, 'register']);
+//Route::post('logout', [AuthController::class, 'logout']);

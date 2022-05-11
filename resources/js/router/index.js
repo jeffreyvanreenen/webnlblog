@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import Blog from '../views/Blog.vue'
 import BlogPost from '../views/BlogPost.vue'
 import Contact from '../views/Contact.vue'
+import Register from '../views/Register.vue'
+import Login from '../views/Login.vue'
+import CreateNewPost from '../views/CreateNewPost.vue'
 
 const routes = [
     {
@@ -24,6 +27,21 @@ const routes = [
         path: '/contact',
         name: 'contact',
         component: Contact
+    },
+    {
+        path: '/register',
+        name: 'register',
+        component: Register
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: Login
+    },
+    {
+        path: '/newpost',
+        name: 'createNewPost',
+        component: CreateNewPost
     },
 
 ]

@@ -24,7 +24,5 @@ class ContactController extends Controller
 
         $details = ['to' => 'mailtrap@webnlblog.nl', 'name' => $request->name, 'email' => $request->email, 'message' => $request->message];
         SendEmail::dispatch($details);
-
-        echo 'test';
     }
 }

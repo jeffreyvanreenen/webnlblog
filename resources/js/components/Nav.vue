@@ -37,18 +37,44 @@
                     </ul>
                 </div>
             </div>
-            <button
-                class="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-orange-500 text-orange-500 px-4 sm:px-8 py-1 sm:py-3 text-semibold">
-                Aanmelden
-            </button>
+
+            <div class="" v-if="isAuthenticated">
+                <button v-on:click="loguserout"
+                        class="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-orange-500 text-orange-500 px-4 sm:px-8 py-1 sm:py-3 text-semibold">
+                    Uitloggen
+                </button>
+            </div>
+            <div class="" v-else>
+                <div class="flex flex-row space-x-5">
+                    <router-link :to="{name: 'login'}">
+                        <button
+                            class="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-orange-500 text-orange-500 px-4 sm:px-8 py-1 sm:py-3 text-semibold">
+                            Aanmelden
+                        </button>
+                    </router-link>
+                    <router-link :to="{name: 'register'}">
+                        <button
+                            class="focus:outline-none hidden md:block bg-transparent transition duration-150 ease-in-out hover:bg-gray-200 rounded border border-orange-500 text-orange-500 px-4 sm:px-8 py-1 sm:py-3 text-semibold">
+                            Registreren
+                        </button>
+                    </router-link>
+                </div>
+            </div>
         </div>
     </nav>
 </template>
 <script>
+import {mapActions} from "vuex";
+import axios from 'axios'
 
 export default {
     name: "CentreAlignedSimple",
+    created() {
+
+    },
     methods: {
+
+
         // Function to toggle header menu in mobile view.
         toggleMenu(flag) {
             let value = document.getElementById("menu");
@@ -58,6 +84,23 @@ export default {
                 value.classList.add("hidden");
             }
         },
+        ...mapActions(['logout']),
+        loguserout: async function (event) {
+            console.log('test')
+            this.logout();
+        }
+
     },
+
+
+    computed: {
+        isAuthenticated() {
+            return this.$store.getters.isAuthenticated;
+        },
+        user() {
+            return this.$store.getters.user;
+        }
+    }
+
 };
 </script>

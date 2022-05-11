@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 
 class BlogsController extends Controller
 {
@@ -65,6 +66,14 @@ class BlogsController extends Controller
     }
 
     public
+    function fetchAllCategories()
+    {
+        return response()->json([
+            'categories' => Category::select('id', 'name')->get()
+        ], Response::HTTP_OK);
+    }
+
+    public
     function fetchAuthors()
     {
         return response()->json([
@@ -81,7 +90,32 @@ class BlogsController extends Controller
     public
     function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'content' => 'required|string',
+            'title' => 'required|string',
+            'url' => 'required|url',
+            'catSelect' => 'nullable|array',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['status' => 'failed', 'message' => $validator->errors()], 422);
+        }
+
+        try {
+            $blog = new Blog;
+            $blog->image = $request->url;
+            $blog->name = $request->title;
+            $blog->post = $request->content;
+            $blog->author = '1';
+            $blog->save();
+        }catch (\Exception $e) {
+            return response()->json(['status' => 'failed', 'message' => $e], 422);
+
+        }
+
+        return response()->json(['status' => 'succes', 'message' => 'succes!'], 201);
+
+
     }
 
     public
